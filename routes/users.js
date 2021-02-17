@@ -1,7 +1,8 @@
 const router = require("express").Router();
-const {User} = require("../model/user");
+const User = require("../model/user");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+
 
 // http://localhost:4000/api/v1
 router.get("/", async (req, res) => {

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const userSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -44,14 +44,14 @@ const userSchema = new mongoose.Schema({
 });
 
 //esta funcion retorna el id sin el _
-userSchema.virtual("id").get(function () {
+UserSchema.virtual("id").get(function () {
   return this._id.toHexString();
 });
 
-userSchema.set("toJSON", {
+UserSchema.set("toJSON", {
   virtuals: true,
 });
 
-const User = mongoose.model("user", userSchema);
+const User = mongoose.model("user", UserSchema);
 
 module.exports = User;
