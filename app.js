@@ -49,12 +49,12 @@ mongoose.connect(process.env.DB, {
 
 
 //server for development
-app.listen(4000, () => {
-  console.log("server is running now en http://localhost:4000");
-});
+// app.listen(4000, () => {
+//   console.log("server is running now en http://localhost:4000");
+// });
 
 //server for production
-// let server = app.listen(process.env.PORT || 4000, function(){
-//   let port = server.address().port;
-//   console.log("Express is working on port" + port)
-// })
+let server = app.listen(process.env.PORT || 4000, function(){
+  let port = server.address().port;
+  console.log("Express is working on port" + port)
+})
