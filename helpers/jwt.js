@@ -20,9 +20,11 @@ function authJwt() {
 }
 
 async function isRevoked(req, payload, done) {
+  console.log(!payload.isAdmin)
   if (!payload.isAdmin) {
-    done(null, true);
+    done();
   }
+  
   done();
 }
 
